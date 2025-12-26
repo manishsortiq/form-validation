@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form action="">
+        Name:
+        <input type="text" required minlength="3"><br><br>
+
+        Email:
+        <input type="email" required><br><br>
+
+        Password:
+        <input type="password" required minlength="6"><br><br>
+
+        Age:
+        <input type="number" min="18" max="60" required><br><br>
+
+        Gender:
+        <input type="radio" name="gender" required>Male
+        <input type="radio" name="gender">Female <br><br>
+
+        Skill:
+        <input type="checkbox" required> HTML
+        <input type="checkbox"> CSS <br><br>
+
+        Country:
+        <select required>
+            <option value="">Select</option>
+            <option value="">India</option>
+            <option value="">USA</option>
+            <option value="">UK</option>
+        </select> <br><br>
+
+        Message:
+        <textarea required minlength="10"></textarea><br><br>
+
+        File:
+        <input type="file" required><br><br>
+
+        <input type="submit">
+    </form>
+</body>
+</html>

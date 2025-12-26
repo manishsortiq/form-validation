@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form onsubmit="return validateForm()">
+        Name:
+        <input type="text" id="name"><br><br>
+        Email:
+        <input type="text" id="email"><br><br>
+        Password:
+        <input type="text" id="pass"><br><br>
+
+        Gender:
+        <input type="radio" name="gender">Male
+        <input type="radio" name="gender">Female<br><br>
+
+        Country:
+        <select id="country">
+            <option value="">Select</option>
+            <option>India</option>
+            <option>USA</option>
+        </select><br><br>
+
+        <input type="submit">
+
+    </form>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("pass").value;
+            let country = document.getElementById("country").value;
+
+            if (name.length < 3) {
+                alert("Name must be at least 3 characters");
+                return false;
+            }
+
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Invaild Email");
+                return false;
+            }
+
+            if (pass.length < 6) {
+                alert("Password too short");
+                return false;
+            }
+
+            let gender = document.getElementsByName("gender");
+            if (!gender[0].checked && !gender[1].checked) {
+            alert("Select Gender");
+            return false;
+            }
+
+            if (country == "") {
+            alert("Select Country");
+            return false;
+            }
+
+            return true;
+        }
+    </script>
+
+
+</body>
+</html>
